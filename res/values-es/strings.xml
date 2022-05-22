@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MostRx</string>
+    <string name="any_pharmacy">El mejor precio</string>
+    <string name="drug_label">Medicina</string>
+    <string name="drug_form">Forma</string>
+    <string name="drug_dosage">Dosis</string>
+    <string name="drug_qty">Cantidad</string>
+    <string name="pharmacy_label">Farmacia</string>
+    <string name="discounter_label">Sitio</string>
+    <string name="est_price">El precio estimado</string>
+    <string name="search_hint">Ingresa el nombre de un medicamento</string>
+    <string name="cancel">Cancelar</string>
+    <string name="loading_desc">buscando</string>
+    <string name="this_is_not_a_coupon">No es un cupón</string>
+    <string name="best_match_label">El mejor descuento en la farmacia eligido:</string>
+    <string name="best_price_label">El mejor descuento en general:</string>
+    <string name="search_again">Buscar otra vez</string>
+    <string name="zip_code">Código postal</string>
+    <string name="find_coupons">Buscar cupones</string>
+    <string name="please_wait">Un momento por favor...</string>
+    <string name="search_results">Los resultados</string>
+    <string name="search">Buscar</string>
+    <string name="custom">Otra cantidad</string>
+    <string name="discontinued_message">La medicina entrada ya no está disponible.</string>
+    <string name="not_a_coupon_desc">Esta pagina no es un cupon, user los botones abajo para buscarlos.</string>
+    <string name="drug_retail">El precio medio sin descuento</string>
+    <string name="drug_discount">El precio medio con descuento</string>
+    <string name="try_again">Volver a intentar</string>
+    <string name="conn_message">Verifica la conexión a internet por favor.</string>
+    <string name="finding_prefix">"Ahora buscando los precios mejores "</string>
+    <string name="disclaimer">Los precios actuales pueden variar. La información presentada no debe ser usado para decidir tomar o no la medicina o alguna medicina. Solamente un doctor tiene el conocimiento y la formación dedicir las medicinas apropriadas para un patiente específico. No endorsamos ninguna medicina como segura, efectiva, o aprobada para curar ninguna paciento o condición médica. Esta información no es consejo médico específico y no reemplace la información del doctor. Habla con tu doctor para aprender los riesgos y beneficios de usar esta medicina.</string>
+    <string name="more_coupons">Más %1$s cupones</string>
+</resources>

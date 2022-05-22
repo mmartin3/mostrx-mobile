@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pharmacies">
+        <item>Lowest price</item>
+        <item>CVS Pharmacy</item>
+        <item>Walgreens</item>
+        <item>Walmart</item>
+    </string-array>
+</resources>

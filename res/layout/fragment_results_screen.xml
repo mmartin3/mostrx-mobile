@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/mostrx_primary">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:background="@color/pill_light_red"
+            android:padding="10dp">
+            <ImageView style="@style/Warning"
+                android:layout_marginEnd="10dp"
+                app:tint="#FFFF00"
+                android:contentDescription="@string/not_a_coupon_desc" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/this_is_not_a_coupon"
+                android:textAllCaps="true"
+                android:textColor="@color/pill_white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+            <ImageView style="@style/Warning"
+                android:layout_marginStart="10dp"
+                app:tint="#FFFF00"
+                android:contentDescription="@string/not_a_coupon_desc" />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+                    <TextView style="@style/LabelDarkBG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/drug_label" />
+                    <TextView style="@style/TextDarkBG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/placeholder"
+                        android:id="@+id/result_drug" />
+                    <View style="@style/Spacer" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout style="@style/InlineInfo"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView style="@style/LabelDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/drug_qty" />
+                            <TextView style="@style/TextDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder"
+                                android:id="@+id/result_qty" />
+                        </LinearLayout>
+                        <LinearLayout style="@style/InlineInfo"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView style="@style/LabelDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/drug_dosage" />
+                            <TextView style="@style/TextDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder"
+                                android:id="@+id/result_dose" />
+                        </LinearLayout>
+                        <LinearLayout style="@style/InlineInfo"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView style="@style/LabelDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/drug_form" />
+                            <TextView style="@style/TextDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder"
+                                android:id="@+id/result_form" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View style="@style/Spacer" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout style="@style/InlineInfo"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/retail_layout">
+                            <TextView style="@style/LabelDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/drug_retail" />
+                            <TextView style="@style/TextDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder"
+                                android:id="@+id/result_retail" />
+                        </LinearLayout>
+                        <LinearLayout style="@style/InlineInfo"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/discount_layout">
+                            <TextView style="@style/LabelDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/drug_discount" />
+                            <TextView style="@style/TextDarkBG"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/placeholder"
+                                android:id="@+id/result_discount" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View style="@style/Spacer" />
+                    <LinearLayout style="@style/CouponBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/pill_white"
+                        android:id="@+id/best_match_coupon">
+                        <TextView style="@style/CouponLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/best_match_label" />
+                        <TextView style="@style/CouponText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_results"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:id="@+id/best_match_empty"
+                            android:layout_margin="10dp" />
+                        <LinearLayout style="@style/CouponDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/best_match_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="bottom"
+                                android:baselineAligned="false">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="48"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CouponSubLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pharmacy_label" />
+                                    <TextView style="@style/CouponText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/placeholder"
+                                        android:id="@+id/best_match_pharmacy" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="48"
+                                    android:orientation="vertical">
+                                    <TextView style="CouponSubLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/discounter_label" />
+                                    <TextView style="@style/CouponText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/placeholder"
+                                        android:id="@+id/best_match_discounter" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <TextView style="@style/CouponSubLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/est_price" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView style="@style/DiscountedPrice"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/placeholder"
+                                    android:id="@+id/best_match_total"
+                                    android:layout_gravity="start"
+                                    android:layout_weight="1" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <com.google.android.material.button.MaterialButton style="@style/MRXButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:text="@string/placeholder"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:id="@+id/best_match_button" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout style="@style/CouponBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/pill_gray"
+                        android:id="@+id/best_price_coupon">
+                        <TextView style="@style/CouponLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/best_price_label" />
+                        <TextView style="@style/CouponText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_results"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:id="@+id/best_price_empty"
+                            android:layout_margin="10dp" />
+                        <LinearLayout style="@style/CouponDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:id="@+id/best_price_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="bottom"
+                                android:baselineAligned="false">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="48"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CouponSubLabel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pharmacy_label" />
+                                    <TextView style="@style/CouponText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/placeholder"
+                                        android:id="@+id/best_price_pharmacy" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="48"
+                                    android:orientation="vertical">
+                                    <TextView style="@style/CouponSubLabel"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/discounter_label" />
+                                    <TextView style="@style/CouponText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/placeholder"
+                                        android:id="@+id/best_price_discounter" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <TextView style="@style/CouponSubLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/est_price" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView style="@style/DiscountedPrice"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/placeholder"
+                                    android:id="@+id/best_price_total"
+                                    android:layout_gravity="start"
+                                    android:layout_weight="1" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <com.google.android.material.button.MaterialButton style="@style/MRXButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:text="@string/placeholder"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="1"
+                                        android:id="@+id/best_price_button" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                <View style="@style/Spacer" />
+                <com.google.android.material.button.MaterialButton style="@style/MRXButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/more_coupons_button"  />
+                <com.google.android.material.button.MaterialButton style="@style/MRXButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/search_again"
+                    android:id="@+id/new_search_button"  />
+                <View style="@style/Spacer" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/tip_layout" >
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:src="@drawable/kofi1"
+                        android:contentDescription="@string/tip_desc"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitStart" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:src="@drawable/kofi2"
+                        android:contentDescription="@string/tip_desc"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitStart" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:src="@drawable/kofi3"
+                        android:contentDescription="@string/tip_desc"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitStart" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:src="@drawable/kofi4"
+                        android:contentDescription="@string/tip_desc"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitStart" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:src="@drawable/kofi5"
+                        android:contentDescription="@string/tip_desc"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="fitStart" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/disclaimer"
+                    android:textColor="@color/pill_white"
+                    android:layout_marginTop="-160dp"/>
+                <View style="@style/Spacer" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout style="@style/FullscreenOverlay"
+        android:id="@+id/results_overlay">
+        <ImageView style="@style/PillSpinner"
+            android:id="@+id/results_pill"
+            android:contentDescription="@string/loading_desc" />
+    </LinearLayout>
+</RelativeLayout>

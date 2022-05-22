@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="FullscreenOverlay">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/mostrx_primary</item>
+        <item name="android:alpha">1.0</item>
+        <item name="android:clickable">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+    </style>
+    <style name="Logo">
+        <item name="android:src">@drawable/mostrx</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="PillSpinner">
+        <item name="android:layout_width">240dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/pill</item>
+        <item name="alpha">1.0</item>
+    </style>
+    <style name="MRXButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/button_states</item>
+    </style>
+    <style name="LabelDarkBG">
+        <item name="android:textColor">@color/pill_gray</item>
+    </style>
+    <style name="TextDarkBG">
+        <item name="android:textColor">@color/pill_white</item>
+        <item name="fontFamily">@font/sanitrixie</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="CouponBlock">
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <style name="Warning">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:src">@android:drawable/ic_dialog_alert</item>
+    </style>
+    <style name="DiscountedPrice">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="CouponLabel">
+        <item name="textAllCaps">true</item>
+    </style>
+    <style name="CouponSubLabel">
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+    <style name="CouponText">
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="CouponDetails">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+    <style name="Spacer">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
+    <style name="InlineInfo">
+        <item name="android:layout_width">112dp</item>
+    </style>
+    <style name="PP">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="TipSegmt">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_weight">20</item>
+        <item name="android:contentDescription">@string/tip_desc</item>
+    </style>
+</resources>

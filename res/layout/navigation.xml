@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/home_screen">
+    <fragment android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_screen"
+        android:name="com.mattmakesapps.mostrx.HomeScreen"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home_screen">
+        <action
+            android:id="@+id/action_home_screen_to_search_options"
+            app:destination="@id/search_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:id="@+id/search_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.mattmakesapps.mostrx.SearchScreen"
+        android:label="@string/search">
+        <argument android:name="drugData"
+            app:argType="com.mattmakesapps.mostrx.DrugResponse" />
+        <argument android:name="selection"
+            app:argType="com.mattmakesapps.mostrx.SearchResponse$SearchResult" />
+        <action
+            android:id="@+id/action_search_options_to_loading_screen"
+            app:destination="@id/loading_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment android:id="@+id/loading_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.mattmakesapps.mostrx.LoadingScreen"
+        android:label="@string/please_wait">
+        <action
+            android:id="@+id/action_loading_screen_to_results_screen"
+            app:destination="@id/results_screen"
+            app:popUpTo="@id/search_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument android:name="drug"
+            app:argType="com.mattmakesapps.mostrx.Drug" />
+        <argument android:name="location"
+            app:argType="com.mattmakesapps.mostrx.SearchParameters" />
+        <argument android:name="html"
+            app:argType="string" />
+    </fragment>
+    <fragment android:id="@+id/results_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.mattmakesapps.mostrx.ResultsScreen"
+        android:label="@string/search_results">
+        <action
+            android:id="@+id/restart"
+            app:destination="@id/home_screen"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+        <argument android:name="coupons"
+            app:argType="com.mattmakesapps.mostrx.CouponResults" />
+        <argument android:name="retail"
+            app:argType="float" />
+        <argument android:name="params"
+            app:argType="com.mattmakesapps.mostrx.SearchParameters" />
+    </fragment>
+</navigation>

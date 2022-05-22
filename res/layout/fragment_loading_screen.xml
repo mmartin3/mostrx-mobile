@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:focusable="true">
+    <LinearLayout
+        android:background="@color/mostrx_primary"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="82"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
+        android:paddingVertical="26dp">
+        <LinearLayout style="@style/PP">
+            <ImageView style="@style/Logo"
+                android:id="@+id/logo"
+                android:contentDescription="@string/logo_desc" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:gravity="center_horizontal|center_vertical">
+            <ImageView style="@style/PillSpinner"
+                android:id="@+id/pill"
+                android:contentDescription="@string/loading_desc" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/pill_light_red"
+        android:id="@+id/label"
+        android:font="@font/sanitrixie"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="18"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:background="@color/pill_gray"
+        android:textStyle="bold"
+        android:gravity="center" />
+</LinearLayout>

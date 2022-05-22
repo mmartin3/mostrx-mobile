@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait">
+    <fragment
+        android:id="@+id/my_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@layout/navigation"
+        app:layout_constraintHeight_percent="0.9" />
+    <RelativeLayout
+        android:id="@+id/ad_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_nav_host_fragment"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHeight_percent="0.1"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="290dp"
+            android:layout_height="49dp"
+            android:orientation="horizontal"
+            android:id="@+id/tip_layout_aux">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/kofi1"
+                android:contentDescription="@string/tip_desc" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/kofi2"
+                android:contentDescription="@string/tip_desc" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/kofi3"
+                android:contentDescription="@string/tip_desc" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/kofi4"
+                android:contentDescription="@string/tip_desc" />
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:src="@drawable/kofi5"
+                android:contentDescription="@string/tip_desc" />
+        </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-6405405414435615/5228719603"></com.google.android.gms.ads.AdView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
