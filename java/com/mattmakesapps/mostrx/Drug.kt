@@ -13,9 +13,9 @@ data class Drug(val brandName: String,
     val branding: Branding = if (selectedBrand.isGeneric) Branding.GENERIC else Branding.BRAND
     val slug = if (branding == Branding.BRAND) brandSlug else genericSlug
     val form: String = selectedForm.name
-    val encodedForm: String = stripSlashes(form)
+    val encodedForm: String = form.encodeSlashes()
     val dosage: String = selectedStrength.strength
-    val encodedDosage: String = stripSlashes(dosage)
+    val encodedDosage: String = dosage.encodeSlashes()
     val quantity: String = selectedQuantity.amt.toString()
     val displayQuantity = if (form == "Bottle") "1 Bottle" else "$quantity ${encodedForm}s"
     val ndc: String = selectedQuantity.ndc
@@ -34,8 +34,8 @@ data class Drug(val brandName: String,
         }
     }
 
-    private fun stripSlashes(prop: String): String {
-        return prop.replace("/", "%2F");
+    private fun String.encodeSlashes(): String {
+        return replace("/", "%2F");
     }
 
     private fun String.nameToSlug(): String {
