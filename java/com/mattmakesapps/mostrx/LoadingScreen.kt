@@ -104,13 +104,11 @@ class LoadingScreen: Fragment() {
     }
 
     private fun processResults(coupons: CouponResponse, params: SearchParameters) {
-        val results = coupons.getBestMatches(params)
-
         val bundle = bundleOf(
-            "coupons" to results,
-            "retail" to coupons.data["goodRx"]?.retail,
-            "drug" to drug,
+            "coupons" to coupons.getBestMatches(params),
             "avg" to coupons.avgDiscount,
+            "retail" to coupons.avgRetail,
+            "drug" to drug,
             "params" to params
         )
 
